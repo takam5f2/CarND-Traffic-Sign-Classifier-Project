@@ -184,7 +184,7 @@ Here are the results of the prediction:
 | Priority road		| Priority road               			|
 
 
-The model was able to correctly guess 11 of the 11 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the given test set.
+The model was able to correctly guess 11 of the 11 traffic signs, which gives an accuracy of 90.9%. This compares favorably to the accuracy on the given test set, but Speed limit image was classified into Speed limit(30km/h) wrongly.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
