@@ -66,52 +66,71 @@ Here are exploratory visualization of each data set such as training data set, v
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I added new images for data augmentation. I added two function: random rotation and random brightness change.
-Here is an example of an original image and an augmented image:
+As a first step, I added new images for data augmentation.
+I want to train my model with more images because data augmentation is one of the most effective technique to train my
+model more strongly.
+I added two function: random rotation and random brightness change.
+I got angle and brightness offset randomly, and apply them for rotation and changing rotation.
+ Here is an example of an original image and an augmented image:
 
 ![alt text][image2_1]
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ...
-
-To add more data to the the data set, I used the following techniques because ...
-
-Here is an example of an original image and an augmented image:
-
-The difference between the original data set and the augmented data set is the following ...
+After that, I normalized the image data because I want to avoid over-fitting with normlization.
+I want to equalize input data to train my model without large biases.
+I subtracted 128 from original input data and divided it with 128
+128 means the middle value of pixel's maximum value(255).
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					|
+| Layer       		|     Description	|
 |:---------------------:|:---------------------------------------------:|
-| Input         		| 32x32x3 RGB image   							|
-| Convolution 3x3     	| 1x1 stride, edge, outputs 30x30x6 	|
-| RELU					|												|
+| Input        		| 32x32x3 RGB image	|
+| Convolution 3x3     	| 1x1 stride, edge, outputs 30x30x6 |
+| Batch normalization   |     	      	    	|
+| RELU	      		|     		    	|
+| Dropout     		|     		    	|
 | Convolution 3x3  | 1x1 stride, edge, outputs 28x28x6  |
-| RELU  |   |
-| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
-| Convolution 5x5	    | 1x1 stride, ege, outputs 10x10x16      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Batch normalization   |     	      	    	|
+| RELU        	     	|		        |
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 	|
+| Convolution 5x5	| 1x1 stride, edge, outputs 10x10x16	|
+| Batch normalization   |     	      	    	|
+| RELU        	     	|		        |
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 	|
+| Flatten		| outputs 400  	       	|
+| Fully Connetcted	| outputs 120  	       	|
+| Batch normalization   |     	      	    	|
+| RELU        	     	|		        |
+| Dropout     		|     		    	|
+| Fully Connetcted	| outputs 84  	       	|
+| Batch normalization   |     	      	    	|
+| RELU        	     	|		        |
+| Dropout     		|     		    	|
+| Fully Connetcted	| outputs 43(n_classes) |
+| Softmax		| 			|
+
 
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I used an Adam optimizer.
+I applied weight decay with `tf.nn.l2_loss function`.
+I got weight decay of L2 norm by multiplying results obtained with `tf.nn.l2_loss()` and the lambda coefficient(0.01).
+It is one of ways to avoid over-fitting.
+
+I decided the batch size as 128, and the number of epochs as 100.
+I defined learning rate with 0.001.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ?
-* test set accuracy of ?
+* training set accuracy of 0.970
+* validation set accuracy of 0.932
+* test set accuracy of 0.931
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
