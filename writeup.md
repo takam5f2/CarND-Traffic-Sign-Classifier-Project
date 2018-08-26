@@ -134,9 +134,9 @@ I defined learning rate with 0.001.
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.970
-* validation set accuracy of 0.932
-* test set accuracy of 0.931
+* training set accuracy of 0.973
+* validation set accuracy of 0.948
+* test set accuracy of 0.935
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -174,7 +174,7 @@ Here are the results of the prediction:
 | No entry     		| No entry           				|
 | Turn right ahead     	| Turn right ahead   				|
 | Traffic signals	| Traffic signals    				|
-| Speed limit (70km/h)	| Speed limit (70km/h)  			|
+| Speed limit (70km/h)	| Speed limit (30km/h)  			|
 | No vehicles		| No vehicles                 			|
 | Speed limit (30km/h)	| Speed limit (30km/h)        			|
 | Speed limit (30km/h)	| Speed limit (30km/h)        			|
