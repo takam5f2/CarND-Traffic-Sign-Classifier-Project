@@ -23,11 +23,17 @@ The goals / steps of this project are the following:
 [image1_2]: ./writeup_images/histogram_of_validation.png "Histogram of validation data set"
 [image1_3]: ./writeup_images/histogram_of_test.png "Histogram of test data set"
 [image2_1]: ./writeup_images/augmented_image.png "Augmented Image"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image3_1]: ./german_traffic_sign/german_traffic_sign_001.png "No vehicles1"
+[image3_2]: ./german_traffic_sign/german_traffic_sign_002.png "Slippery road"
+[image3_3]: ./german_traffic_sign/german_traffic_sign_003.png "No vehicles2"
+[image3_4]: ./german_traffic_sign/german_traffic_sign_004.png "Speed limit (30km/h)1"
+[image3_5]: ./german_traffic_sign/german_traffic_sign_006.png "Speed limit (70km/h)1"
+[image3_6]: ./german_traffic_sign/german_traffic_sign_007.png "No entry"
+[image3_7]: ./german_traffic_sign/german_traffic_sign_008.png "Speed limit (30km/h)2"
+[image3_8]: ./german_traffic_sign/german_traffic_sign_009.png "Priority road"
+[image3_9]: ./german_traffic_sign/german_traffic_sign_010.png "Traffic signals"
+[image3_10]: ./german_traffic_sign/german_traffic_sign_011.png "Stop"
+[image3_11]: ./german_traffic_sign/german_traffic_sign_012.png "Turn right ahead"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -151,8 +157,11 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6]
-![alt text][image7] ![alt text][image8]
+![alt text][image3_1] ![alt text][image3_2] ![alt text][image3_3]
+![alt text][image3_4] ![alt text][image3_5] ![alt text][image3_6]
+![alt text][image3_7] ![alt text][image3_8] ![alt text][image3_9]
+![alt text][image3_10] ![alt text][image3_11]
+
 
 The first image might be difficult to classify because ...
 
@@ -160,16 +169,22 @@ The first image might be difficult to classify because ...
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					|
+| Image		        |     Prediction	        		|
 |:---------------------:|:---------------------------------------------:|
-| Stop Sign      		| Stop sign   									|
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No entry     		| No entry           				|
+| Turn right ahead     	| Turn right ahead   				|
+| Traffic signals	| Traffic signals    				|
+| Speed limit (70km/h)	| Speed limit (70km/h)  			|
+| No vehicles		| No vehicles                 			|
+| Speed limit (30km/h)	| Speed limit (30km/h)        			|
+| Speed limit (30km/h)	| Speed limit (30km/h)        			|
+| Slippery road		| Slippery road               			|
+| No vehicles		| No vehicles                 			|
+| Stop			| Stop                        			|
+| Priority road		| Priority road               			|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 11 of the 11 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the given test set.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
