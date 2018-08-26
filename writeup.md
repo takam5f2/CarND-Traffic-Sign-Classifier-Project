@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 [image1_1]: ./writeup_images/histogram_of_training.png "Histogram of training data set"
 [image1_2]: ./writeup_images/histogram_of_validation.png "Histogram of validation data set"
 [image1_3]: ./writeup_images/histogram_of_test.png "Histogram of test data set"
-[image2]: ./writeup_images/augmented_image.png "Augmented Image"
+[image2_1]: ./writeup_images/augmented_image.png "Augmented Image"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -66,11 +66,10 @@ Here are exploratory visualization of each data set such as training data set, v
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I added new images for data augmentation. I added two function: random rotation and random brightness change.
+Here is an example of an original image and an augmented image:
 
-Here is an example of a traffic sign image before and after grayscaling.
-
-![alt text][image2]
+![alt text][image2_1]
 
 As a last step, I normalized the image data because ...
 
@@ -79,8 +78,6 @@ I decided to generate additional data because ...
 To add more data to the the data set, I used the following techniques because ...
 
 Here is an example of an original image and an augmented image:
-
-![alt text][image3]
 
 The difference between the original data set and the augmented data set is the following ...
 
