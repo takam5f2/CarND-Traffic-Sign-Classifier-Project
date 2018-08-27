@@ -77,6 +77,7 @@ Here are exploratory visualization of each data set such as training data set, v
 As a first step, I added new images for data augmentation.
 I want to train my model with more images because data augmentation is one of the most effective technique to train my
 model more strongly.
+
 I added two function: random rotation and random brightness change.
 I got angle and brightness offset randomly, and apply them for rotation and changing rotation.
 I applied these function to images which were chosen randomly. The number of training set got twice as many as that of original training set.
@@ -143,44 +144,45 @@ My final model results were:
 * test set accuracy of 0.935
 
 If an iterative approach was chosen:
+(Sentences on second indent is my answer)
 * What was the first architecture that was tried and why was it chosen?
 
 I chose LeNet as the first architecture, because LeNet was originally dedicated to classification of images. I assumed that if I extend LeNet, traffic sign classification will be realized.
 
 * What were some problems with the initial architecture?
-There were mainly two problems: low accuracy and over-fitting.
+  * There were mainly two problems: low accuracy and over-fitting.
 I copied LeNet thoroughly, and execute learning of traffic sign.
 But, the accuracy of test data had reached about 88%.
 
-Moreover, over-fitting clearly appeared because there was a large gap of accuracy between test set and validation set.
+  * Moreover, over-fitting clearly appeared because there was a large gap of accuracy between test set and validation set.
 Accuracy on the validation set was about 80% at the worst case. 
 
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over-fitting or under-fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
-I divided the first convolutional layer into two convolutional layers.
+  * I divided the first convolutional layer into two convolutional layers.
 I intend to make my model deeper in order to increase accuracy of my model on any data set.
 I applied dropout between the first two convolutional layers.
 
-Additionally, I applied batch normalization function to output from each activation function.
+  * Additionally, I applied batch normalization function to output from each activation function.
 It got rid of my burden to consider initial value of weight, and biases.
 
-Finally, I added `tf.nn.dropout` function to output from each hidden fully connected layer.
+  * Finally, I added `tf.nn.dropout` function to output from each hidden fully connected layer.
 According to my experimental, three dropout function works well on my model.
 
 * Which parameters were tuned? How were they adjusted and why?
-
-I tuned two parameters especially: keep probability for dropout, and the number of epochs.
+  * I tuned two parameters especially: keep probability for dropout, and the number of epochs.
 At first, I set keep probability as 0.5, but it is not effective.
 After adding 0.1 gradually, 0.7 was the most expecting value for keep probabily.
 I chose 100 as epochs because many iteration of learning will increase accuracy generally.
 I decided to use Batch Normalization, and it let me not tuning several parameters.
 
+
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
-I guess that batch normalization was very effective way to adjust my model automatically.
+  * I guess that batch normalization was very effective way to adjust my model automatically.
 After applying this method, accuracy of my model increased drastically.
 
-Besides, first layer splitting and dropout adding played a good role in my model.
+  * Besides, first layer splitting and dropout adding played a good role in my model.
 I searched good combination of using convolutional layer and dropout function.
 I found such combination with trial and error.
 
